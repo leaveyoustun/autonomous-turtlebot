@@ -17,10 +17,7 @@
 
 <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model turtlebot3_burger -x 0.87 -y -1.74 -z 0.0 -Y 0 -param robot_description" />
 
-<node pkg="projet" name="robot_control_node" type="Robot_control_challenge.py"></node>
+<node pkg="projet" name="teleop_robot_control_node" type="mybot_teleop.py"></node>
  
- 
-<!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/> -->
-<!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find projet)/rviz/config.rviz"/> -->
 
 </launch>
