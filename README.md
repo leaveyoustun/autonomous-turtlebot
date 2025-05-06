@@ -2,9 +2,9 @@
 
 
 
-This repository contains the code we wrote to make a **TurtleBot3 Burger** solve three autonomous-navigation micro‑challenges inside the Gazebo world below.
+This repository contains the code for **TurtleBot3 Burger** solving three autonomous-navigation micro‑challenges inside the Gazebo world below.
 
-We built a ROS 1 package that lets a TurtleBot3 Burger navigate a miniature “driving-school” world in Gazebo (and on the real robot). The map combines coloured lane markings, tunnels and obstacles. Our goal was to write a perception + control node for the robot to pass through them.
+The ROS 1 package lets a TurtleBot3 Burger navigate a miniature “driving-school” world in Gazebo (and on the real robot). The map combines coloured lane markings, tunnels and obstacles. The goal was to write a perception + control node for the robot to pass through them.
 
 
 <p align="center">
@@ -22,7 +22,7 @@ We built a ROS 1 package that lets a TurtleBot3 Burger navigate a miniature “d
   <br><em>RViz – left: camera feed used for line detection; right: filtered laser scan.</em>
 </p>
 
-> **Gate‑colour navigation (the forth challenge, where the robot has to pass through the gates based on their colours)** was started but not finished due to time constraints.
+> **Gate‑colour navigation (the fourth challenge, where the robot has to pass through the gates based on their colours)** was started but not finished due to time constraints.
 
 ---
 
