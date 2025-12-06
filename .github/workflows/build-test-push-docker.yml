@@ -25,14 +25,13 @@ jobs:
           docker build --platform=linux/amd64 \
             -t leaveyou/ros1-noetic:test .
 
-      # Run tests / smoke test
+      # test
       - name: Smoke test image
         run: |
-          docker run --rm \
-            leaveyou/ros1-noetic:test \
-            bash -lc "source /opt/ros/noetic/setup.bash && rosversion -d"
-
-      # Only push if build + tests pass
+          docker run --rm --entrypoint /bin/bash leaveyou/ros1-noetic:test\
+            -lc "source /opt/ros/noetic/setup.bash && source /ros1_ws/devel/setup.bash && roslaunch projet challenge.launch gui:=false --screen"
+      
+      # Push
       - name: Push image
         if: github.ref == 'refs/heads/main'
         run: |
