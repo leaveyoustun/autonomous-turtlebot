@@ -26,11 +26,15 @@ jobs:
             -t leaveyou/ros1-noetic:test .
 
       # test
-      - name: Smoke test image
+      - name: Smoke test image (headless, timed)
         run: |
-          docker run --rm --entrypoint /bin/bash leaveyou/ros1-noetic:test\
-            -lc "source /opt/ros/noetic/setup.bash && source /ros1_ws/devel/setup.bash && roslaunch projet challenge.launch gui:=false --screen"
-      
+          docker run --rm \
+            --entrypoint /bin/bash \
+            leaveyou/ros1-noetic:test\
+            -lc "source /opt/ros/noetic/setup.bash && \
+                 source /ros1_ws/devel/setup.bash && \
+                 timeout 30s roslaunch projet challenge.launch gui:=false --screen"
+                 
       # Push
       - name: Push image
         if: github.ref == 'refs/heads/main'
